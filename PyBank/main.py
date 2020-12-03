@@ -48,6 +48,7 @@ with open(budget_csv_path) as csvfile:
     #Calculate the average change of profits/losses
     average_change = sum(monthly_change) / total_months
 
+
 print(total_months)
 print(net_total)
 print({greatest_increase['month'], greatest_increase['value']})
