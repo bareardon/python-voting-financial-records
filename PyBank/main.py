@@ -40,7 +40,6 @@ with open(budget_csv_path) as csvfile:
             greatest_increase['month'] = row[0]
             greatest_increase['value'] = int(row[1])
 
-
         #Greatest decrease in losses (date and amount) over the entire period
         if greatest_decrease['value'] > int(row[1]):
             greatest_decrease['month'] = row[0]
@@ -49,6 +48,11 @@ with open(budget_csv_path) as csvfile:
     #Calculate the average change of profits/losses
     average_change = sum(monthly_change) / total_months
 
+print(total_months)
+print(net_total)
+print({greatest_increase['month'], greatest_increase['value']})
+print({greatest_decrease['month'], greatest_decrease['value']})
+print(average_change)
 
 
 # Set format for printing
