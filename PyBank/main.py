@@ -48,14 +48,6 @@ with open(budget_csv_path) as csvfile:
     #Calculate the average change of profits/losses
     average_change = sum(monthly_change) / total_months
 
-
-print(total_months)
-print(net_total)
-print({greatest_increase['month'], greatest_increase['value']})
-print({greatest_decrease['month'], greatest_decrease['value']})
-print(average_change)
-
-
 # Set format for printing
 output = (
     f"Financial Analysis\n"
@@ -67,6 +59,7 @@ output = (
     f"Greatest Decrease in Losses:   {greatest_decrease['month']}  (${greatest_decrease['value']})\n"
 )
 
+print(output)
 
 with open("analysis/output.txt", "w") as txt_file: 
     txt_file.write(output)
