@@ -10,6 +10,7 @@ election_csv_path = os.path.join('Resources', 'election_data.csv')
 total_votes = 0 
 candidate_votes = {}
 candidate_votes_percentage = {}
+combined_votes_percentages = defaultdict(list)
 candidates = []
 percentage = 0 
 winner_name = []
@@ -42,36 +43,29 @@ with open(election_csv_path) as csvfile:
                 candidate_votes[name] += 1
     
 # Calculate the percentage of votes each candidate won
-
 # Create a new dictionary with candidate name and votes with same values from candidate_votes
 candidate_votes_percentage = dict(candidate_votes)  
 
 for name in candidate_votes_percentage:
-    candidate_votes_percentage[name] = round(((candidate_votes_percentage[name] / (total_votes))*100), 2)
+    candidate_votes_percentage[name] = f"{round(((candidate_votes_percentage[name] / (total_votes))*100), 3)}%"
 
-print(candidate_votes_percentage)
-
-for name in candidate_votes_percentage:
-    candidate_votes_percentage[value].append(name)  
-      
-    
-#print(candidates)
-print(candidate_votes)
+for i in (candidate_votes_percentage, candidate_votes):
+    for key,value in i.items():
+        combined_votes_percentages[key].append(value)
 
 # Determine the winner of the election based on the poplar vote 
 winner_name = max(candidate_votes.items(), key=operator.itemgetter(1))[0]
 
-print(winner_name)
-
-# # Set format for printing 
+# Set format for printing 
 output = (
-    f"Election Results\n"
+    f"\nElection Results\n"
     f"-----------------\n"
     f"Total Votes: {total_votes}\n"
     f"-----------------\n"
-    f"{candidate_votes}\n"
+    f"{combined_votes_percentages}\n"
     f"-----------------\n"
-    f"Winner: {winner_name}"
+    f"Winner: {winner_name}\n"
+    f"-----------------"
 )
 
 with open("analysis/output.txt", "w") as txt_file: 
