@@ -54,9 +54,9 @@ output = (
     f"-------------------\n"
     f"Total Months: {total_months}\n"
     f"Total: ${net_total}\n"
-    f"Average Change: $ {round(average_change,2)}\n"
-    f"Greatest Increase in Profits:  {greatest_increase['month']}  (${greatest_increase['value']})\n"
-    f"Greatest Decrease in Losses:   {greatest_decrease['month']}  (${greatest_decrease['value']})\n"
+    f"Average Change: ${round(average_change,2)}\n"
+    f"Greatest Increase in Profits: {greatest_increase['month']} (${greatest_increase['value']})\n"
+    f"Greatest Decrease in Losses:  {greatest_decrease['month']} (${greatest_decrease['value']})\n"
 )
 
 print(output)
