@@ -54,6 +54,7 @@ print({greatest_increase['month'], greatest_increase['value']})
 print({greatest_decrease['month'], greatest_decrease['value']})
 print(average_change)
 
+
 # Set format for printing
 output = (
     f"Financial Analysis\n"
@@ -64,6 +65,7 @@ output = (
     f"Greatest Increase in Profits:  {greatest_increase['month']}  (${greatest_increase['value']})\n"
     f"Greatest Decrease in Losses:   {greatest_decrease['month']}  (${greatest_decrease['value']})\n"
 )
+
 
 with open("analysis/output.txt", "w") as txt_file: 
     txt_file.write(output)
