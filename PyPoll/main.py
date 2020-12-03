@@ -47,7 +47,9 @@ candidate_votes_percentage = dict(candidate_votes)
 
 vote_res = ""
 for key, value in candidate_votes_percentage.items():
-    vote_res += key + ' '+ str(round(((value/total_votes) *100), 3))+ '%' + ' ' + '(' + str(value) + ')' + '\n'
+    
+    vote_percentage = float (value)/float(total_votes) * 100
+    vote_res += key + ' '+ f'{vote_percentage:.3f}%  ({value})\n'
 
 # Determine the winner of the election based on the poplar vote 
 winner_name = max(candidate_votes.items(), key=operator.itemgetter(1))[0]
