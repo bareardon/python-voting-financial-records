@@ -32,7 +32,7 @@ with open(election_csv_path) as csvfile:
 
         name = row[2]
 
-        # Calculate the total number of votes each candidate won- 
+        # Calculate the total number of votes each candidate won 
         if name not in candidate_votes:
             candidate_votes[name] = 1
         else:
