@@ -43,8 +43,7 @@ with open(election_csv_path) as csvfile:
                 candidate_votes[name] += 1
 
 print(candidate_votes)
-
-    
+   
 # Calculate the percentage of votes each candidate won and create a new dictionary with candidate name and votes with same values from candidate_votes
 candidate_votes_percentage = dict(candidate_votes)  
 
